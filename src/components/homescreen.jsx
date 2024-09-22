@@ -40,7 +40,7 @@ export default function HomeScreen() {
                         <div className="absolute inset-0 mix-blend-multiply bg-zinc-400"></div>
                         <section className="relative z-10 w-full h-full flex flex-col justify-center items-center gap-16 md:gap-24 lg:gap-20 text-center text-white bg-transparent">
                             <h1 className="text-4xl md:text-5xl xl:text-7xl uppercase bg-clip-text">Daniel Meneses</h1>
-                            <span className="text-sm md:text-xl xl:text-2xl border-b-2 border-teal-500 bg-clip-text">Web Developer <i class="snes-logo"></i></span>
+                            <span className="text-sm md:text-xl xl:text-2xl border-b-2 border-teal-500 bg-clip-text">Web Developer <i className="snes-logo"></i></span>
                             <button
                                 type="button"
                                 className="nes-btn is-primary animate-bounce"
