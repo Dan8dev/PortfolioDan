@@ -1,0 +1,39 @@
+---
+import { ReturnToMenu } from "../../components/returnToMenu";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout>
+    <ReturnToMenu client:load />
+    <main class="p-1 lg:p-4">
+        <h2 class="flex justify-center items-center gap-1 text-center text-2xl text-white uppercase lg:text-4xl">Professional Experience</h2>
+        <div class="nes-container is-dark flex flex-col gap-3 p-3 md:p-6 lg:gap-4 lg:p-8 xl:gap-6 xl:p-10">
+            <h3 class="text-center text-base underline decoration-4 uppercase md:text-lg lg:text-xl xl:text-2xl">Universidad del Conde 2022 - Actualmente</h3>
+            <p class="text-xs md:text-sm md:tracking-wide md:leading-normal md:text-balance lg:text-pretty lg:text-base xl:text-xl xl:tracking-tight xl:leading-snug">
+                Actualmente me desempeño como desarrollador web Full Stack (Frontend y Backend),proporcionando mantenimiento
+                y mejorando los paneles administrativos y estudiantiles existentes, así como creando landing pages. Implemento
+                nuevas funcionalidades y optimizo continuamente el rendimiento de estos sistemas. Entre mis logros destacan:
+            </p>
+
+            <ul class="list-inside list-disc text-left my-2 text-xs md:text-sm md:tracking-wide md:leading-normal md:text-balance lg:text-pretty lg:text-base xl:text-xl xl:tracking-tight xl:leading-snug">
+                <li>La integración de Zoom para facilitar el acceso a clases.</li>
+                <li>El desarrollo de un sistema completo de requisiciones.</li>
+                <li>
+                    La implementación y consumo de APIs para el envío de códigos de seguridad mediante Twilio y el almacenamiento de
+                    recursos, como imágenes y PDFs, en Cloudinary.
+                </li>
+            </ul>
+
+            <p class="text-xs md:text-sm md:tracking-wide md:leading-normal md:text-balance lg:text-pretty lg:text-base xl:text-xl xl:tracking-tight xl:leading-snug">
+                Trabajo en equipo bajo metodologías ágiles, utilizando tecnologías como JavaScript, React, PHP, MySQL, TailwindCSS,
+                Firebase, y gestiono el control de versiones con Git y GitHub. He logrado un impacto significativo al mejorar la
+                eficiencia de los sistemas, reduciendo tiempos de carga y optimizando la experiencia del usuario final. Además,
+                he contribuido al mantenimiento y optimización de 3 apps para iOS, mejorando tiempos de carga, corrigiendo bugs
+                y añadiendo nuevas funcionalidades. Actualmente, me encuentro rediseñando el sistema de call center para hacerlo más
+                intuitivo y eficiente, utilizando React, Tailwind, Firebase y diversas librerías que agilizan el desarrollo.
+                Asimismo, estoy creando un chatbot para automatizar el soporte técnico, respondiendo a las consultas más comunes de
+                los alumnos y reduciendo la carga de trabajo del área de soporte.
+            </p>
+        </div>          
+    </main>
+</Layout>

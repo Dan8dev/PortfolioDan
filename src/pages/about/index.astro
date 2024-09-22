@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { TextAboutMe } from "../../components/textAboutMe";
+import { ReturnToMenu } from "../../components/returnToMenu";
+
+const textAboutMe = `Soy un desarrollador web con casi 2 años de experiencia, enfocado en crear experiencias web intuitivas
+                    y funcionales. Familiarizado con HTML, CSS, Tailwind, JavaScript, React, y actualmente estoy
+                    aprendiendo Astro para mantenerme al día con las últimas tecnologías. También he colaborado en la parte backend,
+                    proporcionando datos a través de consultas a bases de datos, consumo de APIs, dando mantenimiento al código
+                    existente. Además, desarrollo proyectos de software adaptadas a las necesidades específicas de la empresa,
+                    asegurando soluciones eficientes y personalizadas.`;
+---
+
+<Layout>
+    <ReturnToMenu client:load />
+    <section class="p-5 w-full h-screen flex justify-center items-center">
+        <div class="nes-container is-dark with-title is-centered is-rounded xl:w-full">
+            <p class="title">About Me</p>
+            <article class="flex flex-col md:flex-row gap-5 xl:gap-28 justify-center lg:justify-around xl:justify-center items-center bg-gray-nes">
+                <header class="w-9/12 md:w-4/12 lg:w-3/12 xl:w-3/12 rounded-lg">
+                    <img src="../../img/me.jpg" alt="My Profile Picture" class="w-full rounded-lg" />
+                </header>
+                <TextAboutMe textAboutMe={textAboutMe} client:load />
+            </article>
+        </div>
+    </section>
+</Layout>

@@ -1,0 +1,58 @@
+---
+import { ReturnToMenu } from '../../components/returnToMenu';
+import Layout from '../../layouts/Layout.astro';
+
+const projects = [
+    {
+        title: 'Landing Page',
+        url: 'https://universidaddelconde.edu.mx/',
+        img: '/img/p1.jpeg',
+        stack: [
+            'React',
+            'Tailwind'
+        ]
+    },
+    {
+        title: 'Assistance system',
+        url: 'https://moni.com.mx/staff/?eve=366',
+        img: '/img/p2.png',
+        stack: [
+            'React',
+            'Tailwind',
+            'PHP',
+            'MySQL'
+        ]
+    },
+    {
+        title: 'Landing page for congress',
+        url: 'https://cismac.com.mx/cismac2024/',
+        img: '/img/p3.png',
+        stack: [
+            'HTML5',
+            'CSS3',
+            'JavaScript'
+        ]
+    },
+];
+---
+
+<Layout>
+    <ReturnToMenu client:load />
+    <section class="flex flex-col gap-2 p-1 md:px-4 xl:p-5">
+        <h2 class="flex justify-center items-center gap-1text-center text-2xl text-white uppercase lg:text-4xl">Projects</h2>
+        {projects.map(project => (
+            <div class="nes-container is-dark with-title is-centered flex flex-col gap-2">
+                <h3 class="title">{project.title}</h3>
+                <a href={project.url} target="_blank" class="rounded-md">
+                    <img src={project.img} alt="Project Img" class="rounded-md md:w-9/12 md:mx-auto xl:w-8/12 hover:scale-110 transition-all ease duration-500">
+                </a>
+                <div class="lists">
+                    <p class="text-base text-center uppercase md:text-lg lg:text-2xl xl:text-4xl">Stack</p>
+                    <ul class="list-disc list-inside text-left lg:text-center">
+                        {project.stack.map(element => <li class="text-sm md:text-base lg:text-lg xl:text-2xl">{element}</li>)}
+                    </ul>
+                </div>
+            </div>
+        ))}
+    </section>
+</Layout>

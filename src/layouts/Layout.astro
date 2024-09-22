@@ -1,0 +1,40 @@
+---
+import { ViewTransitions } from "astro:transitions";
+--- 
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Portfolio" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css">
+		<title>Portfolio</title>
+		<ViewTransitions />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	@font-face {
+		font-family: 'Press Start 2P';
+		src: url('/fonts/PressStart2P-Regular.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+	}
+	 
+	* {
+		font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;
+	}
+
+	body {
+		background: #000;
+	}
+
+	.is-white {
+		color: white !important;
+	}
+</style>
