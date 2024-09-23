@@ -40,7 +40,20 @@ export default function HomeScreen() {
                         <div className="absolute inset-0 mix-blend-multiply bg-zinc-400"></div>
                         <section className="relative z-10 w-full h-full flex flex-col justify-center items-center gap-16 md:gap-24 lg:gap-20 text-center text-white bg-transparent">
                             <h1 className="text-4xl md:text-5xl xl:text-7xl uppercase bg-clip-text">Daniel Meneses</h1>
-                            <span className="text-sm md:text-xl xl:text-2xl border-b-2 border-teal-500 bg-clip-text">Web Developer <i className="snes-logo"></i></span>
+                            <span className="text-sm md:text-xl xl:text-2xl border-b-2 border-teal-500 bg-clip-text">
+                                Web Developer <i className="snes-logo mx-2"></i>
+                            </span>
+                            <a
+                                href="https://github.com/Dan8dev"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="absolute bottom-0 py-2 text-white md:right-0 md:p-2"
+                            >
+                                <i className="nes-octocat animate"></i>
+                                <span className="inline text-sm lg:text-base xl:text-lg lg:block">
+                                    Dan8dev
+                                </span>
+                            </a>
                             <button
                                 type="button"
                                 className="nes-btn is-primary animate-bounce"
