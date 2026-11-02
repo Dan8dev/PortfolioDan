@@ -1,0 +1,126 @@
+/* nes.css va en su propia capa, por debajo de las utilidades de Tailwind,
+   para que las clases de Tailwind siempre puedan sobrescribirlo. */
+@layer theme, base, nes, components, utilities;
+
+@import 'tailwindcss';
+@import 'nes.css/css/nes.min.css' layer(nes);
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/700.css';
+
+@font-face {
+  font-family: 'Press Start 2P';
+  src: url('/fonts/PressStart2P-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Paleta tomada del fondo pixel de aurora */
+@theme {
+  --font-pixel: 'Press Start 2P', ui-monospace, monospace;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-night-950: #07061a;
+  --color-night-900: #0b0a24;
+  --color-night-800: #14123a;
+  --color-night-700: #1f1c52;
+  --color-aurora: #2ef2b0;
+  --color-aurora-dim: #1bb386;
+  --color-sky: #38c8f5;
+  --color-star-pink: #ff6fae;
+  --color-star-gold: #ffd84a;
+  --color-ink: #e8e6ff;
+  --color-muted: #a4a1c9;
+}
+
+/* Va en "components" (después de la capa nes) porque nes.css define
+   html/body con la fuente pixel y fondo blanco. */
+@layer components {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    background-color: var(--color-night-950);
+  }
+
+  body {
+    font-family: var(--font-mono);
+    color: var(--color-ink);
+    background-color: var(--color-night-950);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-aurora);
+    color: var(--color-night-950);
+  }
+
+  :focus-visible {
+    outline: 3px dashed var(--color-star-gold);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Ajustes de nes.css a la paleta del sitio */
+  .nes-container.is-dark {
+    background-color: var(--color-night-800);
+    border-color: var(--color-ink);
+  }
+  .nes-container.is-dark.with-title > .title {
+    background-color: var(--color-night-800);
+  }
+  .nes-btn {
+    font-family: var(--font-pixel);
+  }
+}
+
+@utility pixelated {
+  image-rendering: pixelated;
+}
+
+/* Sombra "pixel" escalonada, sin desenfoque */
+@utility shadow-pixel {
+  box-shadow:
+    4px 0 0 0 var(--color-night-950),
+    0 4px 0 0 var(--color-night-950),
+    4px 4px 0 0 var(--color-night-950),
+    8px 8px 0 0 color-mix(in srgb, var(--color-aurora) 35%, transparent);
+}
+
+/* Parpadeo de cursor / PRESS START: salta entre visible e invisible, sin transición */
+@utility animate-blink {
+  animation: blink 1s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Estrellas titilantes del fondo */
+@utility animate-twinkle {
+  animation: twinkle 2.4s steps(3, end) infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
